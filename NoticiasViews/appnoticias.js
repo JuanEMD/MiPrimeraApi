@@ -28,7 +28,10 @@ $(document).ready(function () {
     });   
 } 
 
-    $('#SubmitButton').click(function(){
+
+    $('#AgreagarButton').click(function(){
+
+        console.log("test");
 
         var formData = {
 
@@ -62,7 +65,6 @@ $(document).ready(function () {
                 console.log(error.statusText);
                 console.log(formData);
             }
-
         });
     });
 

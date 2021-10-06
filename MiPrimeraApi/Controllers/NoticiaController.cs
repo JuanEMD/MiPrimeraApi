@@ -31,7 +31,7 @@ namespace MiPrimeraApi.Controllers
         }
 
         [HttpPost]
-        [Route("AgregarNoticia")] //Api/Noticia/ObtenerNoticia
+        [Route("AgregarNoticia")] //Api/Noticia/AgregarNoticia
         public IActionResult AgregarNoticia([FromBody] Noticia _noticia)
         {
             var resultado = _NoticiaService.AgregarNoticia(_noticia);
