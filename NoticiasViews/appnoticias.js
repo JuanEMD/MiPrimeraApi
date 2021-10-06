@@ -2,7 +2,7 @@ $(document).ready(function () {
     
     ObtenerNoticias();
 
-    function ObtenerNoticias(params) {
+    function ObtenerNoticias() {
         $("#NoticiasDiv").empty();
     $.ajax({  
         type: "GET", 
@@ -35,7 +35,7 @@ $(document).ready(function () {
                 titulo: $('#titulo').val(),
                 descripcion: $('#descripcion').val(),
                 contenido: $('#contenido').val(),
-                fecha: "2021-09-23T00:00:00",
+                fecha: $('#fecha').val(),
                 autorId: 1,
             };
 
@@ -51,6 +51,11 @@ $(document).ready(function () {
             url: "https://localhost:44383/api/Noticia/AgregarNoticia",
             success: function (result) {
                 console.log("Success");
+                console.log(result);
+                $('#titulo').val('');
+                $('#descripcion').val('');
+                $('#contenido').val('');
+                $('#fecha').val('');
                 ObtenerNoticias();
             },
             error: function (error) {
